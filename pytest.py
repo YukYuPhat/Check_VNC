@@ -20,9 +20,16 @@ PlatformI = '-host=10.1.103.24'
 PlatformN = '-host=10.1.103.28'
 PlatformO = '-host=10.1.103.26'
 DCSLounge = '-host=DCSLoungeS1-PC2.dmmta.com'
-VNCList = [PlatformB,PlatformC,PlatformH,PlatformI,PlatformN];
-#VNCList = [PlatformB,PlatformC];
-VNCDict = {PlatformB:'Platform B',PlatformC:'Platform C',PlatformH: 'Platform H',PlatformI: 'Platform I',PlatformN: 'Platform N',DCSLounge:'DCSLounge'}
+AVLSIGNPC1= '-host=10.1.102.234'
+AVLSIGNPC5= '-host=10.1.102.230'
+AVLSIGNPC3= '-host=10.1.102.232'
+AVLSIGNPC2= '-host=10.1.102.233'
+AVLSIGNPC4= '-host=10.1.102.231'
+VNCList = [PlatformB,PlatformC,PlatformH,PlatformI,PlatformN,AVLSIGNPC1,AVLSIGNPC5,AVLSIGNPC3,AVLSIGNPC2,AVLSIGNPC4];
+#VNCList = [AVLSIGNPC3,AVLSIGNPC2,AVLSIGNPC4];
+VNCDict = {PlatformB:'Platform B',PlatformC:'Platform C',PlatformH: 'Platform H',PlatformI: 'Platform I'
+           ,PlatformN: 'Platform N',DCSLounge:'DCSLounge', AVLSIGNPC1:'AcrossStairs',AVLSIGNPC5:'JavaJoes'
+           ,AVLSIGNPC3:'CSWindow',AVLSIGNPC2:'AboveRestroom',AVLSIGNPC4:'Security'}
 
 TightVNCStuff = 'Chicken'
 ScreenShotLists= [];
@@ -83,6 +90,11 @@ if __name__ == '__main__':
                     pyautogui.click('tightCtrl.png')
                     #keypress "r"
                     pyautogui.press('r')
+                    time.sleep(2)
+                    pyautogui.mouseDown()
+                    pyautogui.mouseUp()
+                    time.sleep(1)
+                    pyautogui.moveTo(10,10)
                     #wait for a bit
                     time.sleep(15)
                 except TypeError: 
@@ -90,6 +102,12 @@ if __name__ == '__main__':
                     pyautogui.click('tightCtrl2.png')
                     #keypress "r"
                     pyautogui.press('r')
+                    time.sleep(2)
+                    pyautogui.mouseDown()
+                    pyautogui.mouseUp()
+                    time.sleep(1)
+                    pyautogui.moveTo(10,10)
+
                     #wait for a bit
                     time.sleep(15)
                 break
